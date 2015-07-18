@@ -1,147 +1,295 @@
 <?php
+    /*
+     * Setting up properties
+     */
     define('URL_PUBLIC_FOLDER', '');
     define('URL_PROTOCOL', 'http://');
     define('URL_DOMAIN', $_SERVER['HTTP_HOST']);
     define('URL_SUB_FOLDER', str_replace(URL_PUBLIC_FOLDER, '', dirname($_SERVER['SCRIPT_NAME'])));
     define('URL', URL_PROTOCOL . URL_DOMAIN . URL_SUB_FOLDER);
+    define('TEXT', URL . DIRECTORY_SEPARATOR . 'text' . DIRECTORY_SEPARATOR);
 ?>
 
 <!DOCTYPE html>
 <html lang="en-US">
     <head>
-        <meta charset="UTF-8">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="profile" href="http://gmpg.org/xfn/11">
+        <meta name="description" content="">
+        <meta name="author" content="">
 
         <title>Technovative | Be part of the Difference</title>
         <link rel="alternate" type="application/rss+xml" title="Technovative Inc. &raquo; Feed" href="http://localhost/technovative-inc/blog/feed/" />
         <link rel="alternate" type="application/rss+xml" title="Technovative Inc. &raquo; Comments Feed" href="http://localhost/technovative-inc/blog/comments/feed/" />
-        
         <link rel='stylesheet' href='<?php echo URL . '/assets/src/reset.css'; ?>' type='text/css' media='all' />
-        
-        
-        <link rel='stylesheet' id='quest-bootstrap-css'  href='<?php echo URL . '/blog/wp-content/themes/quest/assets/plugins/bootstrap/css/bootstrap.min.css?ver=4.2.2'; ?>' type='text/css' media='all' />
-        <link rel='stylesheet' id='Quest-style-css'  href='<?php echo URL . '/blog/wp-content/themes/quest/style.css?ver=4.2.2'; ?>' type='text/css' media='all' />
-        <link rel='stylesheet' id='google-fonts-css'  href='http://fonts.googleapis.com/css?family=Open+Sans%3A300&#038;ver=4.2.2' type='text/css' media='all' />
-        <link rel='stylesheet' href='<?php echo URL . '/assets/src/styles.css'; ?>' type='text/css' />
-        
-        <link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://localhost/technovative-inc/blog/xmlrpc.php?rsd" />
-        <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://localhost/technovative-inc/blog/wp-includes/wlwmanifest.xml" />
+        <link rel="EditURI" type="application/rsd+xml" title="RSD" href="<?php echo URL . 'blog/xmlrpc.php?rsd'; ?>" />
+        <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="<?php echo URL . 'blog/wp-includes/wlwmanifest.xml'; ?>" />
         <meta name="generator" content="WordPress 4.2.2" />
+        
+        <!-- Bootstrap Core CSS -->
+        <link rel="stylesheet" href="<?php echo URL . '/assets/src/css/bootstrap.min.css'; ?>" type="text/css">
+        <!-- Custom Fonts -->
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="<?php echo URL . '/assets/src/font-awesome/css/font-awesome.min.css'; ?>" type="text/css">
+        <!-- Plugin CSS -->
+        <link rel="stylesheet" href="<?php echo URL . '/assets/src/css/animate.min.css'; ?>" type="text/css">
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="<?php echo URL . '/assets/src/css/creative.css'; ?>" type="text/css">
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
     </head>
     
-    <body class="home blog logged-in admin-bar no-customize-support">
-        <div id="page" class="hfeed site">
-            <a class="skip-link screen-reader-text" href="#content">Skip to content</a>
+    <body id="page-top">
 
-            <header id="masthead" class="main-header" role="banner">
-                <div class="container">
-                    <div class="row">
-                        <div class="site-branding col-md-4">
+        <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand page-scroll" href="#page-top"><?php echo file_get_contents(TEXT . 'title.txt'); ?></a>
+                </div>
 
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a class="page-scroll" href="#about">About</a>
+                        </li>
+                        <li>
+                            <a class="page-scroll" href="#services">Services</a>
+                        </li>
+                        <li>
+                            <a class="page-scroll" href="#portfolio">Portfolio</a>
+                        </li>
+                        <li>
+                            <a class="page-scroll" href="#contact">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container-fluid -->
+        </nav>
 
-                            <h1 class="site-title"><a href="http://localhost/technovative-inc/blog/"
-                                                      rel="home">Technovative Inc.</a></h1>
+        <header>
+            <div class="header-content">
+                <div class="header-content-inner">
+                    <h1>Your Favorite Source of Free Bootstrap Themes</h1>
+                    <hr>
+                    <p>Start Bootstrap can help you build better websites using the Bootstrap CSS framework! Just download your template and start going, no strings attached!</p>
+                    <a href="#about" class="btn btn-primary btn-xl page-scroll">Find Out More</a>
+                </div>
+            </div>
+        </header>
 
-                            <span class="site-description">Slogan</span>
-
-                        </div>
-                        <!-- .site-branding -->
-
-                        <nav id="site-navigation" class="main-navigation col-md-8" role="navigation">
-                            <div class="navbar-toggle" data-toggle="collapse" data-target="#main-menu-collapse">
-                                <span class="menu-text">Menu</span>
-                                <i class="fa fa-reorder"></i>
-                            </div>
-                            <div class="navbar-collapse collapse" id="main-menu-collapse">
-                                <ul id="menu-main-menu" class="nav navbar-nav"><li id="menu-item-5" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-5"><a href="http://localhost/technovative-inc/blog/">Blog Home</a></li>
-                                    <li id="menu-item-6" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6"><a href="http://localhost/technovative-inc/blog/sample-page/">Sample Page</a></li>
-                                    <li id="menu-item-7" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-7"><a href="http://localhost/technovative-inc">Go back to Company Page</a></li>
-                                    <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children dropdown" id="menu-item-search">
-                                        <a href="#"><i class="fa fa-search"></i></a>
-                                        <ul class="dropdown-menu">
-                                            <li><form class="search" action="http://localhost/technovative-inc/blog/" method="get">
-                                                    <fieldset>
-                                                        <div class="text">
-                                                            <input name="s" id="s" type="text" placeholder="Search ..."/>
-                                                            <button class="fa fa-search">Search</button>
-                                                        </div>
-                                                    </fieldset>
-                                                </form>
-                                            </li>
-                                        </ul>
-                                    </li></ul>					</div>
-                        </nav>
-                        <!-- #site-navigation -->
+        <section class="bg-primary" id="about">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2 text-center">
+                        <h2 class="section-heading">We've got what you need!</h2>
+                        <hr class="light">
+                        <p class="text-faded">Start Bootstrap has everything you need to get your new website up and running in no time! All of the templates and themes on Start Bootstrap are open source, free to download, and easy to use. No strings attached!</p>
+                        <a href="#" class="btn btn-default btn-xl">Get Started!</a>
                     </div>
                 </div>
-            </header>
-            <!-- #masthead -->
+            </div>
+        </section>
 
+        <section id="services">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 text-center">
+                        <h2 class="section-heading">At Your Service</h2>
+                        <hr class="primary">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <div class="service-box">
+                            <i class="fa fa-4x fa-diamond wow bounceIn text-primary"></i>
+                            <h3>Sturdy Templates</h3>
+                            <p class="text-muted">Our templates are updated regularly so they don't break.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <div class="service-box">
+                            <i class="fa fa-4x fa-paper-plane wow bounceIn text-primary" data-wow-delay=".1s"></i>
+                            <h3>Ready to Ship</h3>
+                            <p class="text-muted">You can use this theme as is, or you can make changes!</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <div class="service-box">
+                            <i class="fa fa-4x fa-newspaper-o wow bounceIn text-primary" data-wow-delay=".2s"></i>
+                            <h3>Up to Date</h3>
+                            <p class="text-muted">We update dependencies to keep things fresh.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <div class="service-box">
+                            <i class="fa fa-4x fa-heart wow bounceIn text-primary" data-wow-delay=".3s"></i>
+                            <h3>Made with Love</h3>
+                            <p class="text-muted">You have to make your websites with love these days!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-            <div id="content">
-
-                <div class="quest-row site-content">
-                    <div class="container">
-                        <div class="row">
-
-
-                            <div id="primary" class="content-area col-md-12">
-                                <main id="main" class="site-main" role="main">
-
-                                    <div id="grid-container" class="clearfix">
-
-
-                                        <div class="post-grid-wrap">
-                                            <article class="post-grid post-1 post type-post status-publish format-standard hentry category-uncategorized" id="post-1">
-
-
-
-
-                                                <h1 class="post-title"><a href="http://localhost/technovative-inc/blog/2015/07/18/hello-world/">Hello world!</a></h1>
-
-                                                <div class="entry-meta">
-                                                    <time class="post-date"><i class="fa fa-clock-o"></i>July 18, 2015</time><span class="seperator">/</span><a href="http://localhost/technovative-inc/blog/2015/07/18/hello-world/#comments"><i class="fa fa-comments"></i>&nbsp; 1 Comment</a>			</div><!-- .entry-meta -->
-
-                                            </article>
-                                        </div>
+        <section class="no-padding" id="portfolio">
+            <div class="container-fluid">
+                <div class="row no-gutter">
+                    <div class="col-lg-4 col-sm-6">
+                        <a href="#" class="portfolio-box">
+                            <img src="img/portfolio/1.jpg" class="img-responsive" alt="">
+                            <div class="portfolio-box-caption">
+                                <div class="portfolio-box-caption-content">
+                                    <div class="project-category text-faded">
+                                        Category
                                     </div>
-
-                                </main>
-                                <!-- #main -->
+                                    <div class="project-name">
+                                        Project Name
+                                    </div>
+                                </div>
                             </div>
-                            <!-- #primary -->
-
-
-                        </div>
-                        <!-- .row -->
+                        </a>
                     </div>
-                    <!-- .container -->
-                </div>
-                <!-- .quest-row -->
-            </div><!-- #content -->
-
-
-
-            <footer id="colophon" class="copyright quest-row" role="contentinfo">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-6 copyright-text">
-                            <a href='http://wordpress.org/'>Proudly powered by WordPress</a><span class="sep"> | </span>Theme: quest by <a href="http://pacethemes.com/wordpress-themes/quest/" rel="designer">Pace Themes</a>.			</div>
-
-                        <div class="col-md-6 social-icon-container clearfix">
-                            <ul>
-                            </ul>
-                        </div>
-
+                    <div class="col-lg-4 col-sm-6">
+                        <a href="#" class="portfolio-box">
+                            <img src="img/portfolio/2.jpg" class="img-responsive" alt="">
+                            <div class="portfolio-box-caption">
+                                <div class="portfolio-box-caption-content">
+                                    <div class="project-category text-faded">
+                                        Category
+                                    </div>
+                                    <div class="project-name">
+                                        Project Name
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
                     </div>
-                    <!-- end row -->
+                    <div class="col-lg-4 col-sm-6">
+                        <a href="#" class="portfolio-box">
+                            <img src="img/portfolio/3.jpg" class="img-responsive" alt="">
+                            <div class="portfolio-box-caption">
+                                <div class="portfolio-box-caption-content">
+                                    <div class="project-category text-faded">
+                                        Category
+                                    </div>
+                                    <div class="project-name">
+                                        Project Name
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-4 col-sm-6">
+                        <a href="#" class="portfolio-box">
+                            <img src="img/portfolio/4.jpg" class="img-responsive" alt="">
+                            <div class="portfolio-box-caption">
+                                <div class="portfolio-box-caption-content">
+                                    <div class="project-category text-faded">
+                                        Category
+                                    </div>
+                                    <div class="project-name">
+                                        Project Name
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-4 col-sm-6">
+                        <a href="#" class="portfolio-box">
+                            <img src="img/portfolio/5.jpg" class="img-responsive" alt="">
+                            <div class="portfolio-box-caption">
+                                <div class="portfolio-box-caption-content">
+                                    <div class="project-category text-faded">
+                                        Category
+                                    </div>
+                                    <div class="project-name">
+                                        Project Name
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-4 col-sm-6">
+                        <a href="#" class="portfolio-box">
+                            <img src="img/portfolio/6.jpg" class="img-responsive" alt="">
+                            <div class="portfolio-box-caption">
+                                <div class="portfolio-box-caption-content">
+                                    <div class="project-category text-faded">
+                                        Category
+                                    </div>
+                                    <div class="project-name">
+                                        Project Name
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
                 </div>
-                <!-- end container -->
-        </div> <!-- end quest-row -->
+            </div>
+        </section>
 
-    </div><!-- #page -->
+        <aside class="bg-dark">
+            <div class="container text-center">
+                <div class="call-to-action">
+                    <h2>Free Download at Start Bootstrap!</h2>
+                    <a href="#" class="btn btn-default btn-xl wow tada">Download Now!</a>
+                </div>
+            </div>
+        </aside>
 
-</body>
+        <section id="contact">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2 text-center">
+                        <h2 class="section-heading">Let's Get In Touch!</h2>
+                        <hr class="primary">
+                        <p>Ready to start your next project with us? That's great! Give us a call or send us an email and we will get back to you as soon as possible!</p>
+                    </div>
+                    <div class="col-lg-4 col-lg-offset-2 text-center">
+                        <i class="fa fa-phone fa-3x wow bounceIn"></i>
+                        <p>123-456-6789</p>
+                    </div>
+                    <div class="col-lg-4 text-center">
+                        <i class="fa fa-envelope-o fa-3x wow bounceIn" data-wow-delay=".1s"></i>
+                        <p><a href="mailto:your-email@your-domain.com">feedback@startbootstrap.com</a></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- jQuery -->
+        <script src="<?php echo URL . '/assets/src/'; ?>js/jquery.js"></script>
+
+        <!-- Bootstrap Core JavaScript -->
+        <script src="<?php echo URL . '/assets/src/'; ?>js/bootstrap.min.js"></script>
+
+        <!-- Plugin JavaScript -->
+        <script src="<?php echo URL . '/assets/src/'; ?>js/jquery.easing.min.js"></script>
+        <script src="<?php echo URL . '/assets/src/'; ?>js/jquery.fittext.js"></script>
+        <script src="<?php echo URL . '/assets/src/'; ?>js/wow.min.js"></script>
+
+        <!-- Custom Theme JavaScript -->
+        <script src="<?php echo URL . '/assets/src/'; ?>js/creative.js"></script>
+
+    </body>
     
 </html>
