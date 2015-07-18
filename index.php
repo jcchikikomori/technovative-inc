@@ -12,6 +12,8 @@
     define('URL', URL_PROTOCOL . URL_DOMAIN . URL_SUB_FOLDER);
     define('TEXT', URL . DIRECTORY_SEPARATOR . 'text' . DIRECTORY_SEPARATOR);
     
+    define('ASSETS', URL . '/assets/src/');
+    
     define('TITLE' , TEXT . 'title.txt');
     define('HEAD_TEXT' , TEXT . 'head_text.txt');
     define('HEAD_TEXT_SUB' , TEXT . 'head_text_sub.txt');
@@ -33,21 +35,21 @@
         <title>Technovative | Be part of the Difference</title>
         <link rel="alternate" type="application/rss+xml" title="Technovative Inc. &raquo; Feed" href="http://localhost/technovative-inc/blog/feed/" />
         <link rel="alternate" type="application/rss+xml" title="Technovative Inc. &raquo; Comments Feed" href="http://localhost/technovative-inc/blog/comments/feed/" />
-        <link rel='stylesheet' href='<?php echo URL . '/assets/src/reset.css'; ?>' type='text/css' media='all' />
+        <link rel='stylesheet' href='<?php echo ASSETS . 'reset.css'; ?>' type='text/css' media='all' />
         <link rel="EditURI" type="application/rsd+xml" title="RSD" href="<?php echo URL . 'blog/xmlrpc.php?rsd'; ?>" />
         <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="<?php echo URL . 'blog/wp-includes/wlwmanifest.xml'; ?>" />
         <meta name="generator" content="WordPress 4.2.2" />
         
         <!-- Bootstrap Core CSS -->
-        <link rel="stylesheet" href="<?php echo URL . '/assets/src/css/bootstrap.min.css'; ?>" type="text/css">
+        <link rel="stylesheet" href="<?php echo ASSETS . 'css/bootstrap.min.css'; ?>" type="text/css">
         <!-- Custom Fonts -->
         <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
         <link href='http://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" href="<?php echo URL . '/assets/src/font-awesome/css/font-awesome.min.css'; ?>" type="text/css">
+        <link rel="stylesheet" href="<?php echo ASSETS . 'font-awesome/css/font-awesome.min.css'; ?>" type="text/css">
         <!-- Plugin CSS -->
-        <link rel="stylesheet" href="<?php echo URL . '/assets/src/css/animate.min.css'; ?>" type="text/css">
+        <link rel="stylesheet" href="<?php echo ASSETS . 'css/animate.min.css'; ?>" type="text/css">
         <!-- Custom CSS -->
-        <link rel="stylesheet" href="<?php echo URL . '/assets/src/css/creative.css'; ?>" type="text/css">
+        <link rel="stylesheet" href="<?php echo ASSETS . 'css/creative.css'; ?>" type="text/css">
 
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -69,7 +71,10 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand page-scroll" href="#page-top"><?php echo file_get_contents(TITLE); ?></a>
+                    <a class="navbar-brand page-scroll" href="#page-top" id="logo">
+                        <img src="<?php echo URL; ?>/assets/img/logo.png" id="logo_image" />
+                        <?php echo file_get_contents(TITLE); ?>
+                    </a>
                 </div>
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
@@ -126,7 +131,7 @@
                 <div class="row no-gutter">
                     <div class="col-lg-4 col-sm-6">
                         <a class="portfolio-box">
-                            <img src="<?php echo URL; ?>/assets/src/img/portfolio/1.jpg" class="img-responsive" alt="">
+                            <img src="<?php echo ASSETS; ?>img/portfolio/1.jpg" class="img-responsive" alt="">
                             <div class="portfolio-box-caption">
                                 <div class="portfolio-box-caption-content">
                                     <div class="project-category text-faded">
@@ -141,7 +146,7 @@
                     </div>
                     <div class="col-lg-4 col-sm-6">
                         <a class="portfolio-box">
-                            <img src="<?php echo URL; ?>/assets/src/img/portfolio/2.jpg" class="img-responsive" alt="">
+                            <img src="<?php echo ASSETS; ?>img/portfolio/2.jpg" class="img-responsive" alt="">
                             <div class="portfolio-box-caption">
                                 <div class="portfolio-box-caption-content">
                                     <div class="project-category text-faded">
@@ -156,7 +161,7 @@
                     </div>
                     <div class="col-lg-4 col-sm-6">
                         <a class="portfolio-box">
-                            <img src="<?php echo URL; ?>/assets/src/img/portfolio/3.jpg" class="img-responsive" alt="">
+                            <img src="<?php echo ASSETS; ?>img/portfolio/3.jpg" class="img-responsive" alt="">
                             <div class="portfolio-box-caption">
                                 <div class="portfolio-box-caption-content">
                                     <div class="project-category text-faded">
@@ -171,7 +176,7 @@
                     </div>
                     <div class="col-lg-4 col-sm-6">
                         <a class="portfolio-box">
-                            <img src="<?php echo URL; ?>/assets/src/img/portfolio/4.jpg" class="img-responsive" alt="">
+                            <img src="<?php echo ASSETS; ?>img/portfolio/4.jpg" class="img-responsive" alt="">
                             <div class="portfolio-box-caption">
                                 <div class="portfolio-box-caption-content">
                                     <div class="project-category text-faded">
@@ -186,7 +191,7 @@
                     </div>
                     <div class="col-lg-4 col-sm-6">
                         <a class="portfolio-box">
-                            <img src="<?php echo URL; ?>/assets/src/img/portfolio/5.jpg" class="img-responsive" alt="">
+                            <img src="<?php echo ASSETS; ?>img/portfolio/5.jpg" class="img-responsive" alt="">
                             <div class="portfolio-box-caption">
                                 <div class="portfolio-box-caption-content">
                                     <div class="project-category text-faded">
@@ -201,7 +206,7 @@
                     </div>
                     <div class="col-lg-4 col-sm-6">
                         <a class="portfolio-box">
-                            <img src="<?php echo URL; ?>/assets/src/img/portfolio/6.jpg" class="img-responsive" alt="">
+                            <img src="<?php echo ASSETS; ?>img/portfolio/6.jpg" class="img-responsive" alt="">
                             <div class="portfolio-box-caption">
                                 <div class="portfolio-box-caption-content">
                                     <div class="project-category text-faded">
@@ -316,18 +321,18 @@
         </section>
 
         <!-- jQuery -->
-        <script src="<?php echo URL . '/assets/src/'; ?>js/jquery.js"></script>
+        <script src="<?php echo ASSETS . ''; ?>js/jquery.js"></script>
 
         <!-- Bootstrap Core JavaScript -->
-        <script src="<?php echo URL . '/assets/src/'; ?>js/bootstrap.min.js"></script>
+        <script src="<?php echo ASSETS . ''; ?>js/bootstrap.min.js"></script>
 
         <!-- Plugin JavaScript -->
-        <script src="<?php echo URL . '/assets/src/'; ?>js/jquery.easing.min.js"></script>
-        <script src="<?php echo URL . '/assets/src/'; ?>js/jquery.fittext.js"></script>
-        <script src="<?php echo URL . '/assets/src/'; ?>js/wow.min.js"></script>
+        <script src="<?php echo ASSETS . ''; ?>js/jquery.easing.min.js"></script>
+        <script src="<?php echo ASSETS . ''; ?>js/jquery.fittext.js"></script>
+        <script src="<?php echo ASSETS . ''; ?>js/wow.min.js"></script>
 
         <!-- Custom Theme JavaScript -->
-        <script src="<?php echo URL . '/assets/src/'; ?>js/creative.js"></script>
+        <script src="<?php echo ASSETS . ''; ?>js/creative.js"></script>
 
     </body>
     
