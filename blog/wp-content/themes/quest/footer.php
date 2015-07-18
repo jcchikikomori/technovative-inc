@@ -21,6 +21,7 @@
 <footer id="colophon" class="copyright quest-row" role="contentinfo">
 	<div class="container">
 		<div class="row">
+                        <!--
 			<div class="col-md-6 copyright-text">
 				<?php echo apply_filters( 'quest_footer_copyright_text', quest_get_footer_copyright() ); ?>
 			</div>
@@ -30,7 +31,7 @@
 					<?php quest_footer_social_icons(); ?>
 				</ul>
 			</div>
-
+                        -->
 		</div>
 		<!-- end row -->
 	</div>
