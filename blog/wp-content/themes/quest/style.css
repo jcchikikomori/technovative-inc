@@ -1046,12 +1046,12 @@ hr {
 #menu-item-search .dropdown-menu {
   right: 1px !important;
   left: auto !important;
-  border-top: 1px solid #e5e5e5 !important;
+  //border-top: 1px solid #e5e5e5 !important;
   padding: 12px;
   -webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
-  border: 1px solid #e5e5e5;
-  background: #fff;
+  //border: 1px solid #e5e5e5;
+  background: #6666CC;
   -webkit-transition: all 0.2s ease-in-out;
   -moz-transition: all 0.2s ease-in-out;
   -o-transition: all 0.2s ease-in-out;

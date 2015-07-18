@@ -55,6 +55,11 @@ p {
     background-color: #3333CC;
 }
 
+.bg-primary a {
+    color: #fff;
+    text-decoration: underline;
+}
+
 .bg-dark {
     color: #fff;
     background-color: #222;
@@ -79,7 +84,7 @@ aside {
 .navbar-default {
     border-color: rgba(34,34,34,.05);
     font-family: 'Open Sans','Helvetica Neue',Arial,sans-serif;
-    background-color: #fff;
+    background-color: #66FFFF;
     -webkit-transition: all .35s;
     -moz-transition: all .35s;
     transition: all .35s;
@@ -148,7 +153,10 @@ aside {
 
     .navbar-default.affix {
         border-color: rgba(34,34,34,.05);
-        background-color: #fff;
+        background-color: #66FFFF;
+        -webkit-box-shadow: 0px 0px 10px rgba(0,0,0,.8);
+        -moz-box-shadow: 0px 0px 10px rgba(0,0,0,.8);
+        box-shadow: 0px 0px 10px rgba(0,0,0,.8);
     }
 
     .navbar-default.affix .navbar-header .navbar-brand {
@@ -178,7 +186,8 @@ header {
     min-height: auto;
     text-align: center;
     color: #fff;
-    background-image: url(../img/header.jpg);
+    //background-image: url(../img/header.jpg);
+    background-color: #333399;
     background-position: center;
     -webkit-background-size: cover;
     -moz-background-size: cover;

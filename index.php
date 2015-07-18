@@ -15,6 +15,7 @@
     define('TITLE' , TEXT . 'title.txt');
     define('HEAD_TEXT' , TEXT . 'head_text.txt');
     define('HEAD_TEXT_SUB' , TEXT . 'head_text_sub.txt');
+    define('HISTORY' , TEXT . 'history.txt');
     define('MISSION' , TEXT . 'mission.txt');
     define('VISION' , TEXT . 'vision.txt');
     define('EMAIL' , TEXT . 'email.txt');
@@ -84,9 +85,6 @@
                             <a class="page-scroll" href="#about">About Us</a>
                         </li>
                         <li>
-                            <a class="page-scroll" href="#portfolio">Gallery</a>
-                        </li>
-                        <li>
                             <a class="page-scroll" href="#contact">Contact Us</a>
                         </li>
                         <li>
@@ -105,7 +103,7 @@
                     <h1><?php echo file_get_contents(HEAD_TEXT); ?></h1>
                     <hr>
                     <p>Here's what can we do for you by pressing this button..</p>
-                    <a href="#about" class="btn btn-primary btn-xl page-scroll">Find Out More</a>
+                    <a href="#products" class="btn btn-primary btn-xl page-scroll">Find Out More</a>
                 </div>
             </div>
         </header>
@@ -117,13 +115,13 @@
                         <h2 class="section-heading">We've got what you need!</h2>
                         <hr class="light">
                         <p class="text-faded"><?php echo file_get_contents(HEAD_TEXT_SUB) ?></p>
-                        <a href="#" class="btn btn-default btn-xl">Get Started!</a>
                     </div>
                 </div>
             </div>
         </section>
-
-        <section class="no-padding" id="portfolio">
+        
+        <!--
+        <section class="no-padding">
             <div class="container-fluid">
                 <div class="row no-gutter">
                     <div class="col-lg-4 col-sm-6">
@@ -219,6 +217,7 @@
                 </div>
             </div>
         </section>
+        -->
         
         <section id="services">
             <div class="container">
@@ -231,65 +230,86 @@
             </div>
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-3 col-md-6 text-center">
+                    <div class="col-md-4 text-center">
                         <div class="service-box">
-                            <i class="fa fa-4x fa-diamond wow bounceIn text-primary"></i>
-                            <h3>Sturdy Templates</h3>
-                            <p class="text-muted">Our templates are updated regularly so they don't break.</p>
+                            <i class="fa fa-4x fa-thumbs-up wow bounceIn text-primary" data-wow-delay=".1s"></i>
+                            <h3>We Ready at anytime</h3>
+                            <p class="text-muted">We can do everything just to make sure it's fair and square.</p>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-6 text-center">
-                        <div class="service-box">
-                            <i class="fa fa-4x fa-paper-plane wow bounceIn text-primary" data-wow-delay=".1s"></i>
-                            <h3>Ready to Ship</h3>
-                            <p class="text-muted">You can use this theme as is, or you can make changes!</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 text-center">
+                    <div class="col-md-4 text-center">
                         <div class="service-box">
                             <i class="fa fa-4x fa-newspaper-o wow bounceIn text-primary" data-wow-delay=".2s"></i>
                             <h3>Up to Date</h3>
-                            <p class="text-muted">We update dependencies to keep things fresh.</p>
+                            <p class="text-muted">We sell latest products as fresh.</p>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-6 text-center">
+                    <div class="col-md-4 text-center">
                         <div class="service-box">
                             <i class="fa fa-4x fa-heart wow bounceIn text-primary" data-wow-delay=".3s"></i>
                             <h3>Made with Love</h3>
-                            <p class="text-muted">You have to make your websites with love these days!</p>
+                            <p class="text-muted">We made with a big heart just for you!</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
+        
+        <section id="about">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 text-center">
+                        <h2 class="section-heading">About Us</h2>
+                        <hr class="primary">
+                        <p>Where, What, When and How we start?</p>
+                        <div class="col-md-4">
+                            <h4>History</h4>
+                            <p><?php echo file_get_contents(HISTORY); ?></p>
+                        </div>
+                        <div class="col-md-4">
+                            <h4>Mission</h4>
+                            <p><?php echo file_get_contents(MISSION); ?></p>
+                        </div>
+                        <div class="col-md-4">
+                            <h4>Vision</h4>
+                            <p><?php echo file_get_contents(VISION); ?></p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-offset-3 text-center">
+                        <p>Got interested about us? You may read more by clicking this button..</p>
+                        <a href="<?php echo URL . '/blog/about-us' ?>" target="_blank" class="btn btn-primary btn-xl page-scroll">More About Us</a>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-        <section id="contact">
+        <section class="bg-primary">
+            <a id="contact"></a>
             <div class="container">
                 <div class="row">
                     <div class="col-lg-8 col-lg-offset-2 text-center">
                         <h2 class="section-heading">Let's Get's Started!</h2>
-                        <hr class="primary">
                         <p>Ready to start with us?</p>
-                    </div>
-                    <div class="col-lg-4 text-center">
-                        <i class="fa fa-phone fa-3x wow bounceIn"></i>
-                        <p>09369772103/09057773129</p>
-                    </div>
-                    <div class="col-lg-4 text-center">
-                        <i class="fa fa-car fa-3x wow bounceIn"></i>
-                        <p>888 Kasipagan St., Brgy. Barangka Drive, Madaluyong City, Metro Manila, Philippines</p>
-                    </div>
-                    <div class="col-lg-4 text-center">
-                        <i class="fa fa-envelope-o fa-3x wow bounceIn" data-wow-delay=".1s"></i>
-                        <p><a href="mailto:<?php echo file_get_contents(EMAIL); ?>"><?php echo file_get_contents(EMAIL); ?></a></p>
                     </div>
                 </div>
             </div>
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <i class="fa fa-car fa-3x wow bounceIn"></i>
+                        <p>888 Kasipagan St., Brgy. Barangka Drive, Madaluyong City, Metro Manila, Philippines</p>
+                    </div>
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <i class="fa fa-phone fa-3x wow bounceIn"></i>
+                        <p>Give us your call at: 09369772103/09057773129</p>
+                    </div>
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <i class="fa fa-envelope-o fa-3x wow bounceIn" data-wow-delay=".1s"></i>
+                        <p>You can send us your thoughts at <a href="mailto:<?php echo file_get_contents(EMAIL); ?>"><?php echo file_get_contents(EMAIL); ?></a></p>
+                    </div>
+                    <div class="col-lg-3 col-md-6 text-center">
                         <i class="fa fa-globe fa-3x wow bounceIn"></i>
-                        <p>Also, Check out our <a href="<?php echo URL; ?>/blog">blog</a>.</p>
+                        <p>Also, Check out our <a href="<?php echo URL; ?>/blog">blog</a> for more details about us.</p>
                     </div>
                 </div>
             </div>
