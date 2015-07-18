@@ -2,12 +2,22 @@
     /*
      * Setting up properties
      */
+    error_reporting(0);
+    ini_set('display_errors', 0);
+    
     define('URL_PUBLIC_FOLDER', '');
     define('URL_PROTOCOL', 'http://');
     define('URL_DOMAIN', $_SERVER['HTTP_HOST']);
     define('URL_SUB_FOLDER', str_replace(URL_PUBLIC_FOLDER, '', dirname($_SERVER['SCRIPT_NAME'])));
     define('URL', URL_PROTOCOL . URL_DOMAIN . URL_SUB_FOLDER);
     define('TEXT', URL . DIRECTORY_SEPARATOR . 'text' . DIRECTORY_SEPARATOR);
+    
+    define('TITLE' , TEXT . 'title.txt');
+    define('HEAD_TEXT' , TEXT . 'head_text.txt');
+    define('HEAD_TEXT_SUB' , TEXT . 'head_text_sub.txt');
+    define('MISSION' , TEXT . 'mission.txt');
+    define('VISION' , TEXT . 'vision.txt');
+    define('EMAIL' , TEXT . 'email.txt');
 ?>
 
 <!DOCTYPE html>
@@ -58,23 +68,29 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand page-scroll" href="#page-top"><?php echo file_get_contents(TEXT . 'title.txt'); ?></a>
+                    <a class="navbar-brand page-scroll" href="#page-top"><?php echo file_get_contents(TITLE); ?></a>
                 </div>
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav navbar-right">
                         <li>
-                            <a class="page-scroll" href="#about">About</a>
+                            <a class="page-scroll" href="#products">Products</a>
                         </li>
                         <li>
                             <a class="page-scroll" href="#services">Services</a>
                         </li>
                         <li>
-                            <a class="page-scroll" href="#portfolio">Portfolio</a>
+                            <a class="page-scroll" href="#about">About Us</a>
                         </li>
                         <li>
-                            <a class="page-scroll" href="#contact">Contact</a>
+                            <a class="page-scroll" href="#portfolio">Gallery</a>
+                        </li>
+                        <li>
+                            <a class="page-scroll" href="#contact">Contact Us</a>
+                        </li>
+                        <li>
+                            <a class="page-scroll" href="<?php echo URL . '/blog' ?>" target="_blank">Blog</a>
                         </li>
                     </ul>
                 </div>
@@ -86,27 +102,124 @@
         <header>
             <div class="header-content">
                 <div class="header-content-inner">
-                    <h1>Your Favorite Source of Free Bootstrap Themes</h1>
+                    <h1><?php echo file_get_contents(HEAD_TEXT); ?></h1>
                     <hr>
-                    <p>Start Bootstrap can help you build better websites using the Bootstrap CSS framework! Just download your template and start going, no strings attached!</p>
+                    <p>Here's what can we do for you by pressing this button..</p>
                     <a href="#about" class="btn btn-primary btn-xl page-scroll">Find Out More</a>
                 </div>
             </div>
         </header>
-
-        <section class="bg-primary" id="about">
+        
+        <section class="bg-primary" id="products">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-8 col-lg-offset-2 text-center">
                         <h2 class="section-heading">We've got what you need!</h2>
                         <hr class="light">
-                        <p class="text-faded">Start Bootstrap has everything you need to get your new website up and running in no time! All of the templates and themes on Start Bootstrap are open source, free to download, and easy to use. No strings attached!</p>
+                        <p class="text-faded"><?php echo file_get_contents(HEAD_TEXT_SUB) ?></p>
                         <a href="#" class="btn btn-default btn-xl">Get Started!</a>
                     </div>
                 </div>
             </div>
         </section>
 
+        <section class="no-padding" id="portfolio">
+            <div class="container-fluid">
+                <div class="row no-gutter">
+                    <div class="col-lg-4 col-sm-6">
+                        <a class="portfolio-box">
+                            <img src="<?php echo URL; ?>/assets/src/img/portfolio/1.jpg" class="img-responsive" alt="">
+                            <div class="portfolio-box-caption">
+                                <div class="portfolio-box-caption-content">
+                                    <div class="project-category text-faded">
+                                        Category
+                                    </div>
+                                    <div class="project-name">
+                                        Project Name
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-4 col-sm-6">
+                        <a class="portfolio-box">
+                            <img src="<?php echo URL; ?>/assets/src/img/portfolio/2.jpg" class="img-responsive" alt="">
+                            <div class="portfolio-box-caption">
+                                <div class="portfolio-box-caption-content">
+                                    <div class="project-category text-faded">
+                                        Category
+                                    </div>
+                                    <div class="project-name">
+                                        Project Name
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-4 col-sm-6">
+                        <a class="portfolio-box">
+                            <img src="<?php echo URL; ?>/assets/src/img/portfolio/3.jpg" class="img-responsive" alt="">
+                            <div class="portfolio-box-caption">
+                                <div class="portfolio-box-caption-content">
+                                    <div class="project-category text-faded">
+                                        Category
+                                    </div>
+                                    <div class="project-name">
+                                        Project Name
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-4 col-sm-6">
+                        <a class="portfolio-box">
+                            <img src="<?php echo URL; ?>/assets/src/img/portfolio/4.jpg" class="img-responsive" alt="">
+                            <div class="portfolio-box-caption">
+                                <div class="portfolio-box-caption-content">
+                                    <div class="project-category text-faded">
+                                        Category
+                                    </div>
+                                    <div class="project-name">
+                                        Project Name
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-4 col-sm-6">
+                        <a class="portfolio-box">
+                            <img src="<?php echo URL; ?>/assets/src/img/portfolio/5.jpg" class="img-responsive" alt="">
+                            <div class="portfolio-box-caption">
+                                <div class="portfolio-box-caption-content">
+                                    <div class="project-category text-faded">
+                                        Category
+                                    </div>
+                                    <div class="project-name">
+                                        Project Name
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-4 col-sm-6">
+                        <a class="portfolio-box">
+                            <img src="<?php echo URL; ?>/assets/src/img/portfolio/6.jpg" class="img-responsive" alt="">
+                            <div class="portfolio-box-caption">
+                                <div class="portfolio-box-caption-content">
+                                    <div class="project-category text-faded">
+                                        Category
+                                    </div>
+                                    <div class="project-name">
+                                        Project Name
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
         <section id="services">
             <div class="container">
                 <div class="row">
@@ -150,127 +263,33 @@
             </div>
         </section>
 
-        <section class="no-padding" id="portfolio">
-            <div class="container-fluid">
-                <div class="row no-gutter">
-                    <div class="col-lg-4 col-sm-6">
-                        <a href="#" class="portfolio-box">
-                            <img src="img/portfolio/1.jpg" class="img-responsive" alt="">
-                            <div class="portfolio-box-caption">
-                                <div class="portfolio-box-caption-content">
-                                    <div class="project-category text-faded">
-                                        Category
-                                    </div>
-                                    <div class="project-name">
-                                        Project Name
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-4 col-sm-6">
-                        <a href="#" class="portfolio-box">
-                            <img src="img/portfolio/2.jpg" class="img-responsive" alt="">
-                            <div class="portfolio-box-caption">
-                                <div class="portfolio-box-caption-content">
-                                    <div class="project-category text-faded">
-                                        Category
-                                    </div>
-                                    <div class="project-name">
-                                        Project Name
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-4 col-sm-6">
-                        <a href="#" class="portfolio-box">
-                            <img src="img/portfolio/3.jpg" class="img-responsive" alt="">
-                            <div class="portfolio-box-caption">
-                                <div class="portfolio-box-caption-content">
-                                    <div class="project-category text-faded">
-                                        Category
-                                    </div>
-                                    <div class="project-name">
-                                        Project Name
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-4 col-sm-6">
-                        <a href="#" class="portfolio-box">
-                            <img src="img/portfolio/4.jpg" class="img-responsive" alt="">
-                            <div class="portfolio-box-caption">
-                                <div class="portfolio-box-caption-content">
-                                    <div class="project-category text-faded">
-                                        Category
-                                    </div>
-                                    <div class="project-name">
-                                        Project Name
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-4 col-sm-6">
-                        <a href="#" class="portfolio-box">
-                            <img src="img/portfolio/5.jpg" class="img-responsive" alt="">
-                            <div class="portfolio-box-caption">
-                                <div class="portfolio-box-caption-content">
-                                    <div class="project-category text-faded">
-                                        Category
-                                    </div>
-                                    <div class="project-name">
-                                        Project Name
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-4 col-sm-6">
-                        <a href="#" class="portfolio-box">
-                            <img src="img/portfolio/6.jpg" class="img-responsive" alt="">
-                            <div class="portfolio-box-caption">
-                                <div class="portfolio-box-caption-content">
-                                    <div class="project-category text-faded">
-                                        Category
-                                    </div>
-                                    <div class="project-name">
-                                        Project Name
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <aside class="bg-dark">
-            <div class="container text-center">
-                <div class="call-to-action">
-                    <h2>Free Download at Start Bootstrap!</h2>
-                    <a href="#" class="btn btn-default btn-xl wow tada">Download Now!</a>
-                </div>
-            </div>
-        </aside>
-
         <section id="contact">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-8 col-lg-offset-2 text-center">
-                        <h2 class="section-heading">Let's Get In Touch!</h2>
+                        <h2 class="section-heading">Let's Get's Started!</h2>
                         <hr class="primary">
-                        <p>Ready to start your next project with us? That's great! Give us a call or send us an email and we will get back to you as soon as possible!</p>
+                        <p>Ready to start with us?</p>
                     </div>
-                    <div class="col-lg-4 col-lg-offset-2 text-center">
+                    <div class="col-lg-4 text-center">
                         <i class="fa fa-phone fa-3x wow bounceIn"></i>
-                        <p>123-456-6789</p>
+                        <p>09369772103/09057773129</p>
+                    </div>
+                    <div class="col-lg-4 text-center">
+                        <i class="fa fa-car fa-3x wow bounceIn"></i>
+                        <p>888 Kasipagan St., Brgy. Barangka Drive, Madaluyong City, Metro Manila, Philippines</p>
                     </div>
                     <div class="col-lg-4 text-center">
                         <i class="fa fa-envelope-o fa-3x wow bounceIn" data-wow-delay=".1s"></i>
-                        <p><a href="mailto:your-email@your-domain.com">feedback@startbootstrap.com</a></p>
+                        <p><a href="mailto:<?php echo file_get_contents(EMAIL); ?>"><?php echo file_get_contents(EMAIL); ?></a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2 text-center">
+                        <i class="fa fa-globe fa-3x wow bounceIn"></i>
+                        <p>Also, Check out our <a href="<?php echo URL; ?>/blog">blog</a>.</p>
                     </div>
                 </div>
             </div>
