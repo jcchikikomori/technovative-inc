@@ -188,11 +188,11 @@ header {
     color: #fff;
     background-image: url(../../img/logo.png);
     background-color: #333399;
-    background-position: center;
-    -webkit-background-size: cover 23%;
-    -moz-background-size: cover 23%;
-    background-size: cover 23%;
-    -o-background-size: cover 23%;
+    background-position: center 75%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
     background-repeat: no-repeat;
 }
 
